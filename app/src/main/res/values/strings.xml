@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">FirebaseDemo</string>
-    <string name="login">Login</string>
+    <string name="login1">Login</string>
     <string name="register">Register</string>
     <string name="enter_email_address">Enter email address</string>
     <string name="enter_password">Enter password</string>
     <string name="register_user">Register</string>
+    <string name="email_address">Email address</string>
+    <string name="password1">Password</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
 </resources>
