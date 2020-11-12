@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,9 +32,14 @@ public class LoginActivity extends AppCompatActivity {
     public void loginUser(View view) {
         String email = mEditTextEmail.getText().toString();
         String password = mEditTextPassword.getText().toString();
-        login(email, password);
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(LoginActivity.this, "Enter all the Login Credentials!", Toast.LENGTH_SHORT).show();
+        } else {
+            login(email, password);
+        }
     }
-    public void login(String email, String password){
+
+    public void login(String email, String password) {
         auth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
